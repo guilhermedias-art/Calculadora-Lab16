@@ -1,39 +1,37 @@
-function adicionarNumero(numero){
-    operaçaoAtual+=numero;
-    atualizarTela(operaçaoAtual);
+let operacaoAtual = '';
+let operador = '';
+let resultado = 0;
+
+function adicionarNumero(numero) {
+    operacaoAtual += numero;
+    atualizarTela(operacaoAtual);
 }
 
-function adicionarOperaçao(operaçao){
-   if(operaçaoAtual!==''){
-    operador=operaçao;
-    operaçaoAtual+=operaçao
-    atualizarTela(operaçaoAtual);
-   }
+function adicionarOperacao(operacao) {
+    if (operacaoAtual !== '') {
+        operacaoAtual += operacao;
+        atualizarTela(operacaoAtual);
+    }
 }
 
-function calcular()
-{
-{
-    try{
-        resultado=eval(operaçaoAtual);
+function calcular() {
+    try {
+        resultado = eval(operacaoAtual);
         atualizarTela(resultado);
-        operaçaoAtual=resultado.toString();
-    } catch(e) {
-        atualizarTela('erro');
-        operaçaoAtual='';
-    }
+        operacaoAtual = resultado.toString();
+    } catch (e) {
+        atualizarTela('Erro');
+        operacaoAtual = '';
     }
 }
 
-function limpar()
-{
-    operaçaoAtual=''
-    operador=''
-    resultado=0;
+function limpar() {
+    operacaoAtual = '';
+    operador = '';
+    resultado = 0;
     atualizarTela(0);
 }
 
-function atualizarTela(valor)
-{
-    document.getElementById('resultado').innerHTML=valor;
+function atualizarTela(valor) {
+    document.getElementById('tela').innerHTML = valor;
 }
